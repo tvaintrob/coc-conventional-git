@@ -10,12 +10,16 @@
   "author": "Tal Vintrob",
   "license": "MIT",
   "engines": {
-      "coc": "^0.0.68"
+    "coc": "^0.0.68"
   },
   "devDependencies": {
     "@types/node": "^12.6.3",
     "coc.nvim": "^0.0.72",
     "rimraf": "^2.6.3",
     "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "conventional-commits-parser": "^3.0.1",
+    "simple-git": "^1.121.0"
   }
 }
