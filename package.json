@@ -1,0 +1,21 @@
+{
+  "name": "coc-conventional-git",
+  "version": "0.0.1",
+  "description": "Complete git topic and scope from history",
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "rimraf lib",
+    "build": "tsc"
+  },
+  "author": "Tal Vintrob",
+  "license": "MIT",
+  "engines": {
+      "coc": "^0.0.68"
+  },
+  "devDependencies": {
+    "@types/node": "^12.6.3",
+    "coc.nvim": "^0.0.72",
+    "rimraf": "^2.6.3",
+    "typescript": "^3.5.3"
+  }
+}
