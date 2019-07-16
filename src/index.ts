@@ -5,7 +5,7 @@ import {
   CompleteOption,
   sources
 } from "coc.nvim";
-import * as simplegit from "simple-git/promise";
+import simplegit from "simple-git/promise";
 import commitsParser from "conventional-commits-parser";
 
 export async function activate(context: ExtensionContext): Promise<void> {
@@ -33,18 +33,22 @@ export async function activate(context: ExtensionContext): Promise<void> {
   subscriptions.push(sources.addSource(source));
 }
 
-async function getHistory(input?: string): Promise<Match[]> {
+export async function getHistory(input?: string): Promise<Match[]> {
   const git = simplegit();
   const logs = await git.log();
 
   if (!input) {
-    return logs.all.map(l => l.message).map(m => commitsParser.sync(m).scope);
+    return logs.all
+      .map(l => l.message)
+      .map(m => commitsParser.sync(m).scope)
+      .filter(m => m != null);
   }
 
   return logs.all
     .filter(l => l.message.includes(input))
     .map(l => l.message)
-    .map(m => commitsParser.sync(m).scope);
+    .map(m => commitsParser.sync(m).scope)
+    .filter(m => m != null);
 }
 
 type Match = string;
