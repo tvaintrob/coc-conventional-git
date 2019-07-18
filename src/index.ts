@@ -11,6 +11,7 @@ import commitsParser from "conventional-commits-parser";
 export async function activate(context: ExtensionContext): Promise<void> {
   let source: ISource = {
     name: "conv-git",
+    shortcut: "CG",
     enable: true,
     filetypes: ["gitcommit"],
     priority: 99,
