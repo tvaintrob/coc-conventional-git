@@ -1,6 +1,6 @@
 {
   "name": "coc-conventional-git",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Complete git topic and scope from history",
   "main": "lib/index.js",
   "scripts": {
