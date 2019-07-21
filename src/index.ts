@@ -15,7 +15,6 @@ export async function activate(context: ExtensionContext): Promise<void> {
     enable: true,
     filetypes: ["gitcommit"],
     priority: 99,
-    sourceType: SourceType.Service,
     doComplete: async function(opt: CompleteOption) {
       if (!opt.input) return;
       const { input } = opt;
